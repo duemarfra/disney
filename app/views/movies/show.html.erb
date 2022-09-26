@@ -1,0 +1,19 @@
+<h2><strong>"<%= @movie.title %>" the movie</strong></h2>
+<%= image_tag @movie.photo if @movie.photo.attached? %>
+<p><strong>creation date:</strong> <%= @movie.creation_date %></p>
+<p><strong>genre:</strong> <%= @movie.genre_name(@movie.genre_id) %></p>
+
+<h3>characters associated with this film:</h3>
+<% @movie.personages.map { |personage| %>
+    <p><%= personage.name %></p>
+<% } %>
+
+<ul>
+    <li>
+        <%= link_to "edit movie", edit_movie_path(@movie) %>
+    </li>
+
+    <li>
+        <%= link_to "destroy movie", movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
+</ul>

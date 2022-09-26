@@ -1,0 +1,12 @@
+<p><%= @genre.name %> </p>
+<%= image_tag @genre.photo if @genre.photo.attached? %>
+
+<ul>
+    <li>
+        <%= link_to "edit", edit_genre_path(@genre) %>
+    </li>
+
+    <li>
+        <%= link_to "destroy", genre_path(@genre), method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
+</ul>

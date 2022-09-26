@@ -1,0 +1,7 @@
+<ul>
+    <li>
+        <%= link_to personage.name, personage %>
+    </li>
+
+    <%= image_tag personage.photo if personage.photo.attached? %>
+</ul>

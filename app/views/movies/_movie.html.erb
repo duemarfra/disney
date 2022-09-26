@@ -1,0 +1,11 @@
+<ul>
+    <li>
+        <%= link_to movie.title, movie %>
+    </li>
+    <li>
+        <%= image_tag movie.photo if movie.photo.attached? %>
+    </li>
+    <li>
+        <p><strong>creation date: </strong><%= movie.creation_date %></p>
+    </li>
+</ul>

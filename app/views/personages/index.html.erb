@@ -1,0 +1,21 @@
+<h2>personages:</h2>
+
+<p><strong><%= link_to "Add new personage", new_personage_path %></strong></p>
+
+
+<h3>search personage for movie:</h3>
+<%= link_to "All personages", personages_path %><br>
+<%= render partial: "movie", collection: @movies %>
+
+<h3>search personage for name and age:</h3>
+<%= form_with url: personages_path, method: :get do |form| %>
+
+    <%= form.text_field :name, placeholder: "name", value: params[:name] %>
+    <%= form.number_field :min_age, placeholder: "min age", value: params[:min_age] %>
+    <%= form.number_field :max_age, placeholder: "max age", value: params[:max_age] %>
+    
+    <%= form.submit "go", disable_with: "going..." %>
+
+<% end %>
+
+<%= render partial: "personage", collection: @personages %>  

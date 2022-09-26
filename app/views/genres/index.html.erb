@@ -1,0 +1,10 @@
+<h2>Genres:</h2>
+
+<strong><%= link_to "Add new genre", new_genre_path %></strong> <br>
+
+<% @genres.map { |genre| %>
+    <%= link_to genre.name, genre %><br>
+    <%= image_tag genre.photo if genre.photo.attached? %><br>
+
+<% } %>
+<br>

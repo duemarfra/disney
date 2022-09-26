@@ -1,0 +1,26 @@
+<h2>movies:</h2>
+
+<%= link_to "Add new movie", new_movie_path %>
+
+<h3>search movie for genre: </h3>
+<%= link_to "All movies", movies_path %><br>
+<%= render partial: "genre", collection: @genres %>
+
+<h3>search movie for title: </h3>
+
+<%= form_with url: movies_path, method: :get do |form| %>
+    <%= form.text_field :title, placeholder: "title", value: params[:title] %>
+
+    <%= form.submit "go", disable_with: "going..." %>
+<% end %>
+
+<h3>search movie for order: </h3>
+
+<%= form_with url: movies_path, method: :get do |form| %>
+
+    <%= form.select :order, [["ascending", "asc"], ["descending", "desc"]], value: params[:order] %>
+
+    <%= form.submit "go", disable_with: "going..." %>
+<% end %>
+
+<%= render partial: "movie", collection: @movies %>

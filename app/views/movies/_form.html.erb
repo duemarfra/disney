@@ -1,0 +1,9 @@
+<%= form_with model: @movie do |form| %>
+    <%= form.text_field :title, placeholder: "title" %><br>
+    <%= form.date_field :creation_date, placeholder: "premiere" %><br>
+    <%= form.label :score %>
+    <%= form.select :score, [1, 2, 3, 4, 5] %><br>
+    <%= form.select :genre_id, movie.genres %><br>
+    <%= form.file_field :photo %><br>
+    <%= form.submit "Submit", disable_with: "Submiting..." %>
+<% end %>

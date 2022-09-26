@@ -1,0 +1,15 @@
+<h3><strong><%= @personage.name %></strong></h3>
+<%= image_tag @personage.photo if @personage.photo.attached? %>
+<p><strong>age: </strong><%= @personage.age %> <br></p>
+<p><strong>weight: </strong><%= @personage.weight %> <br></p>
+<p><strong>history: </strong><%= @personage.history %> <br></p>
+<p><strong>movie in which he appears: </strong> <%= @personage.movie_name(@personage.movie_id) %> <br></p>
+<ul>
+    <li>
+        <%= link_to "edit", edit_personage_path(@personage) %>
+    </li>
+
+    <li>
+        <%= link_to "destroy", personage_path(@personage), method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
+</ul>

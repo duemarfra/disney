@@ -1,0 +1,5 @@
+<%= form_with model: genre do |form| %>
+    <%= form.text_field :name, placeholder: "name" %><br>
+    <%= form.file_field :photo %><br>
+    <%= form.submit "Submit", disable_with: "Submiting..." %>
+<% end %>

@@ -1,0 +1,10 @@
+<%= form_with model: @personage do |form| %>
+
+    <%= form.text_field :name, placeholder: "name" %><br>
+    <%= form.text_field :age, placeholder: "age" %><br>
+    <%= form.text_field :weight, placeholder: "weight" %><br>
+    <%= form.text_field :history, placeholder: "history" %><br>
+    <%= form.select :movie_id, personage.movies %><br>
+    <%= form.file_field :photo %><br>
+    <%= form.submit "Submit", disable_with: "Submiting..." %>
+<% end %>
