@@ -7,10 +7,19 @@
 <%= link_to "All personages", personages_path %><br>
 <%= render partial: "movie", collection: @movies %>
 
-<h3>search personage for name and age:</h3>
+<h3>search personage for name: </h3>
 <%= form_with url: personages_path, method: :get do |form| %>
 
     <%= form.text_field :name, placeholder: "name", value: params[:name] %>
+    
+    <%= form.submit "go", disable_with: "going..." %>
+
+<% end %>
+
+<h3>search personage for age:</h3>
+
+<%= form_with url: personages_path, method: :get do |form| %>
+
     <%= form.number_field :min_age, placeholder: "min age", value: params[:min_age] %>
     <%= form.number_field :max_age, placeholder: "max age", value: params[:max_age] %>
     
